@@ -1,0 +1,15 @@
+{
+  "name": "cgh-sdd-marketplace",
+  "description": "Marketplace personal con el plugin cgh-sdd de spec driven design.",
+  "owner": {
+    "name": "Christian Garcia"
+  },
+  "plugins": [
+    {
+      "name": "cgh-sdd",
+      "source": "./",
+      "description": "Plugin personal para trabajar con spec driven design (SDD) en español de España.",
+      "version": "0.1.0"
+    }
+  ]
+}
