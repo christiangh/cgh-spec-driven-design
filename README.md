@@ -7,13 +7,13 @@ Plugin personal de Claude Code para trabajar con **spec driven design** (SDD) en
 Prueba rápida, sin instalar:
 
 ```bash
-claude --plugin-dir /ruta/a/cgh-spec-drive-design
+claude --plugin-dir /ruta/a/cgh-spec-driven-design
 ```
 
 Instalación como marketplace local:
 
 ```
-/plugin marketplace add /ruta/a/cgh-spec-drive-design
+/plugin marketplace add /ruta/a/cgh-spec-driven-design
 /plugin install cgh-sdd@cgh-sdd-marketplace
 ```
 

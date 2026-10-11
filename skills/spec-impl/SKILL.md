@@ -76,7 +76,7 @@ Solo implemento specs en estado «Aprobado».
 ## Fase 6 — Implementación paso a paso
 
 - **Un paso cada vez:** impleméntalo con las convenciones del proyecto y sus skills y agentes cuando apliquen.
-- **Tras cada paso:** márcalo `[x]` en `plan.md` y resume los archivos tocados. Di «Paso N completado. Revisa el diff; ¿sigo con el paso N+1?» y espera.
+- **Tras cada paso:** márcalo `[x]` en `plan.md`, resume los archivos tocados y sugiere el commit del paso (ver «Mensajes de commit»). Di «Paso N completado. Revisa el diff y haz el commit; ¿sigo con el paso N+1?» y espera.
 - **Ambigüedad:** para, descríbela, ofrece 2-3 opciones concretas y espera. Registra la decisión en «Decisiones técnicas».
 - **Fuera de alcance:** recuerda que no está en el spec y sugiere anotarlo para otro. No lo implementes.
 - **Fidelidad:** implementa lo que dice el spec. Lo mejorable, coméntalo como observación, sin cambiarlo por tu cuenta.
@@ -88,14 +88,34 @@ Solo implemento specs en estado «Aprobado».
 3. Con la trazabilidad de `plan.md`, comprueba que todos sus HU, RF y RNF están implementados y probados.
 4. Si algo falla, corrígelo dentro del alcance o informa al usuario.
 5. Marca la parte `Hecha` en `plan.md`.
-6. Pide al usuario que haga el commit y sugiere el mensaje `feat(spec-NNN): PARTE-NN <título>`.
+6. Pide al usuario que haga el commit de los cambios pendientes (correcciones del cierre y `plan.md`) y sugiere el mensaje (ver «Mensajes de commit»). Sin correcciones, p. ej. `docs(spec-NNN): close PARTE-NN <título>`.
 7. Pregunta si seguir con la siguiente parte (vuelve a la fase 5).
 
 ## Fase 8 — Cierre del spec
 
 1. Con todas las partes hechas, verifica uno a uno los criterios de éxito (CE) y muestra el resultado.
 2. Propón cambiar `**Estado:**` a `Implementado` y edítalo **solo** si el usuario confirma.
-3. Recuerda que el commit final y el PR los hace el usuario. **Para ahí.**
+3. Sugiere el commit final (p. ej. `docs(spec-NNN): mark spec as implemented`) y recuerda que el commit y el PR los hace el usuario. **Para ahí.**
+
+## Mensajes de commit
+
+Sigue [Conventional Commits 1.0.0-beta.2](https://www.conventionalcommits.org/es/v1.0.0-beta.2/). Basa la sugerencia en los cambios reales (`git diff --stat`, `git diff --name-only`) y muéstrala en un bloque de código listo para copiar:
+
+```
+<tipo>(spec-NNN): <descripción>
+
+<cuerpo opcional>
+
+<pie opcional>
+```
+
+- **Tipo:** `feat` nueva funcionalidad; `fix` corrección de error; si no, `test`, `refactor`, `docs`, `style`, `perf`, `build`, `ci` o `chore`. Un commit, un tipo: si el paso mezcla varios, usa el principal y menciónalo en el cuerpo.
+- **Ámbito:** `spec-NNN`, salvo que la convención del proyecto (README, CLAUDE.md, AGENTS.md) indique otra.
+- **Idioma:** inglés, salvo que README, CLAUDE.md o AGENTS.md indiquen otro.
+- **Descripción:** imperativo, minúscula inicial, sin punto final, ≤ 72 caracteres en la primera línea. Ej.: `feat(spec-003): create Group entity with name validation`.
+- **Cuerpo:** tras una línea en blanco, qué y por qué en 1-3 líneas, con la parte, el paso y los HU/RF/RNF cubiertos. Ej.: `PARTE-01, step 1. Covers RF-001.`
+- **Ruptura:** si rompe compatibilidad (API, formato de datos, configuración), pie `BREAKING CHANGE: <qué cambia y cómo migrar>`.
+- **Solo sugerencia:** nunca ejecutes `git add` ni `git commit`.
 
 ## Seguridad
 
