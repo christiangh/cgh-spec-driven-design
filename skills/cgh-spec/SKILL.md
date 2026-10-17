@@ -1,12 +1,12 @@
 ---
-name: spec
-description: Genera una especificación (spec) para spec driven design a partir de una idea o problema, en español de España. Aclara ambigüedades con preguntas por rondas antes de escribir y divide el spec en partes numeradas para desarrollos pequeños. Solo se ejecuta al invocar /cgh-sdd:spec.
+name: cgh-spec
+description: Genera una especificación (spec) para spec driven design a partir de una idea o problema, en español de España. Aclara ambigüedades con preguntas por rondas antes de escribir y divide el spec en partes numeradas para desarrollos pequeños. Solo se ejecuta al invocar /cgh-spec.
 argument-hint: "<idea o problema a especificar>"
 disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, AskUserQuestion, Write(specs/**), Edit(specs/**), Bash(ls:*), Bash(date:*), Bash(echo:*), Bash(git config user.name), Bash(git branch --show-current), Bash(git symbolic-ref --short refs/remotes/origin/HEAD), Bash(git branch --list main master)
 ---
 
-# /cgh-sdd:spec — Diseñador guiado de specs
+# /cgh-spec — Diseñador guiado de specs
 
 ## Contexto de la sesión
 

@@ -1,12 +1,12 @@
 ---
-name: spec-impl
-description: Implementa un spec aprobado de specs/ en español de España. Valida que esté en estado Aprobado, crea la rama del spec desde la principal, genera un plan técnico por parte y codifica paso a paso con pausas para revisar. Nunca hace commits. Solo se ejecuta al invocar /cgh-sdd:spec-impl.
+name: cgh-spec-impl
+description: Implementa un spec aprobado de specs/ en español de España. Valida que esté en estado Aprobado, crea la rama del spec desde la principal, genera un plan técnico por parte y codifica paso a paso con pausas para revisar. Nunca hace commits. Solo se ejecuta al invocar /cgh-spec-impl.
 argument-hint: "<NNN | slug | NNN-slug>"
 disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, AskUserQuestion, Write(specs/**), Edit(specs/**), Bash(ls:*), Bash(date:*), Bash(echo:*), Bash(git status -sb), Bash(git branch --show-current), Bash(git symbolic-ref --short refs/remotes/origin/HEAD), Bash(git branch --list main master), Bash(git branch --list), Bash(git switch -c:*), Bash(git diff --stat), Bash(git diff --name-only)
 ---
 
-# /cgh-sdd:spec-impl — Implementador de specs aprobados
+# /cgh-spec-impl — Implementador de specs aprobados
 
 ## Contexto de la sesión
 
@@ -43,7 +43,7 @@ Estado actual: [ESTADO ENCONTRADO]
 Solo implemento specs en estado «Aprobado».
 
   1. Si está listo, ábrelo y cambia el estado a «Aprobado». Lo hace el usuario, no el agente.
-  2. Si aún necesita trabajo, usa /cgh-sdd:spec para revisarlo.
+  2. Si aún necesita trabajo, usa /cgh-spec para revisarlo.
 ```
 
 ## Fase 3 — Git
@@ -99,7 +99,7 @@ Solo implemento specs en estado «Aprobado».
 
 ## Mensajes de commit
 
-Sigue [Conventional Commits 1.0.0-beta.2](https://www.conventionalcommits.org/es/v1.0.0-beta.2/). Basa la sugerencia en los cambios reales (`git diff --stat`, `git diff --name-only`) y muéstrala en un bloque de código listo para copiar:
+Sigue [Conventional Commits 1.0.0](https://www.conventionalcommits.org/es/v1.0.0/). Basa la sugerencia en los cambios reales (`git diff --stat`, `git diff --name-only`) y muéstrala en un bloque de código listo para copiar:
 
 ```
 <tipo>(spec-NNN): <descripción>
