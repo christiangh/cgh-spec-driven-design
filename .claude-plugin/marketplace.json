@@ -9,7 +9,7 @@
       "name": "cgh-sdd",
       "source": "./",
       "description": "Plugin personal para trabajar con spec driven design (SDD) en español de España.",
-      "version": "0.3.0"
+      "version": "0.4.0"
     }
   ]
 }

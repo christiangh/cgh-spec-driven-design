@@ -72,6 +72,11 @@ Solo implemento specs en estado «Aprobado».
    - Contenido: enfoque, archivos, pasos pequeños con checklist, skills y agentes, decisiones técnicas.
    - **Pruebas y trazabilidad:** cada HU, RF y RNF de la parte y su «Hecho cuando», con su paso y su prueba (criterios Dado/Cuando/Entonces incluidos). Ninguno sin paso ni prueba.
 3. **Aprobación:** muestra el plan y pide aprobación. **Sin ella, no escribas código.** Ajústalo si el usuario lo pide.
+4. **Commits de la aprobación:** en la misma respuesta que pide aprobar el plan, sugiere los commits que el usuario hará al aprobarlo, antes del paso 1 (ver «Mensajes de commit»), cada uno con los archivos que incluye:
+   - Si `spec.md` tiene cambios sin commitear (p. ej. el estado pasado a `Aprobado`), primero un commit solo con el spec, p. ej. `docs(spec-NNN): approve <título> spec`.
+   - Después, un commit solo con `plan.md`, p. ej. `docs(spec-NNN): add PARTE-NN technical plan`.
+
+   Si el plan cambia antes de aprobarse, repite la sugerencia con el mensaje ajustado. Con el plan aprobado, pide que haga los commits y espera su confirmación antes de empezar el paso 1.
 
 ## Fase 6 — Implementación paso a paso
 
