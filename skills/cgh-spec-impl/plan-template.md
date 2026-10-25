@@ -10,6 +10,7 @@ GUÍA GENERAL (los comentarios y ejemplos se eliminan al generar el plan)
 - Una sección por parte, en el orden sugerido, añadida al planificar esa parte. Estados: Pendiente, En curso, Hecha.
 - Convenciones del proyecto (README, CLAUDE.md, AGENTS.md): estructura, estilo, comandos de build/test/lint.
 - Pasos pequeños: cada uno deja el proyecto compilando y revisable en un diff corto. Markdown estándar para GitHub.
+- Tests primero por defecto: cada paso con comportamiento comprobable va precedido de su paso de tests, con esqueleto y «Ejecutar y ver que fallan» (ver ejemplo de «Pasos»). Salvo que el proyecto lo restrinja o lo desactive.
 -->
 
 ## PARTE-NN: [Título de la parte]
@@ -29,9 +30,10 @@ Ej.: "Nuevo módulo de grupos con repositorio en memoria, siguiendo la estructur
 
 <!-- Checklist numerada; [x] al completar cada paso.
 Ej.:
-- [ ] 1. Crear entidad Grupo con validación de nombre (RF-001).
-- [ ] 2. Invitar y listar miembros (RF-005).
-- [ ] 3. Pruebas de HU-03.
+- [ ] 1. Tests de creación de Grupo con el esqueleto de la entidad (RF-001). Ejecutar y ver que fallan.
+- [ ] 2. Crear entidad Grupo con validación de nombre (RF-001).
+- [ ] 3. Tests de invitar y listar miembros con su esqueleto (RF-005, HU-03). Ejecutar y ver que fallan.
+- [ ] 4. Invitar y listar miembros (RF-005).
 -->
 
 ### Pruebas y trazabilidad
@@ -40,8 +42,8 @@ Ej.:
 Ej.:
 | Elemento | Paso | Prueba |
 |----------|------|--------|
-| RF-001 | 1 | Test unitario de creación de grupo |
-| HU-03 / Hecho cuando | 2, 3 | Test de integración con 3 miembros |
+| RF-001 | 1, 2 | Test unitario de creación de grupo |
+| HU-03 / Hecho cuando | 3, 4 | Test de integración con 3 miembros |
 
 Comandos: `npm test`, `npm run lint`
 -->

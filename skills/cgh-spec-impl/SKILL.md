@@ -70,6 +70,7 @@ Solo implemento specs en estado «Aprobado».
    - Si el archivo no existe, créalo con la cabecera de `plan-template.md` (directorio base de esta skill).
    - Sigue la guía de la plantilla y elimina sus comentarios y ejemplos.
    - Contenido: enfoque, archivos, pasos pequeños con checklist, skills y agentes, decisiones técnicas.
+   - **Tests primero (por defecto):** cada paso que implementa comportamiento comprobable con tests va precedido de un paso propio de tests. Ese paso crea el esqueleto mínimo para que compile (tipos y funciones que devuelven vacío o lanzan «no implementado»), escribe los tests y termina con «Ejecutar y ver que fallan». Tests y código del mismo comportamiento nunca van en el mismo paso. Quedan exentos la configuración, las dependencias, la documentación, los recursos y los estilos o plantillas puramente visuales. Si las convenciones del proyecto (`README.md`, `CLAUDE.md`, `AGENTS.md` o los documentos que importen) lo restringen o lo desactivan, sigue las convenciones y anótalo en «Decisiones técnicas».
    - **Pruebas y trazabilidad:** cada HU, RF y RNF de la parte y su «Hecho cuando», con su paso y su prueba (criterios Dado/Cuando/Entonces incluidos). Ninguno sin paso ni prueba.
 3. **Aprobación:** muestra el plan y pide aprobación. **Sin ella, no escribas código.** Ajústalo si el usuario lo pide.
 4. **Commits de la aprobación:** en la misma respuesta que pide aprobar el plan, sugiere los commits que el usuario hará al aprobarlo, antes del paso 1 (ver «Mensajes de commit»), cada uno con los archivos que incluye:
@@ -81,6 +82,7 @@ Solo implemento specs en estado «Aprobado».
 ## Fase 6 — Implementación paso a paso
 
 - **Un paso cada vez:** impleméntalo con las convenciones del proyecto y sus skills y agentes cuando apliquen.
+- **Paso de tests primero:** ejecuta los tests nuevos y comprueba que fallan en sus aserciones, no por errores de compilación ni de imports. Muestra la salida resumida. Si alguno pasa sin haber implementado nada, para: no prueba lo que debe. Su commit es de tipo `test`, separado del de la implementación.
 - **Tras cada paso:** márcalo `[x]` en `plan.md`, resume los archivos tocados y sugiere el commit del paso (ver «Mensajes de commit»). Di «Paso N completado. Revisa el diff y haz el commit; ¿sigo con el paso N+1?» y espera.
 - **Ambigüedad:** para, descríbela, ofrece 2-3 opciones concretas y espera. Registra la decisión en «Decisiones técnicas».
 - **Fuera de alcance:** recuerda que no está en el spec y sugiere anotarlo para otro. No lo implementes.
